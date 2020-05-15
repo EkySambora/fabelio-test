@@ -66,13 +66,10 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
     
     if(e.target.checked ){
       newArrCheckBox.push(addValue);
-      // console.log(e.target.value);
       this.setState({newArrCheckBox:newArrCheckBox});
       this.setState({searchTerm: e.target.value})
     } else {
       newArrCheckBox.pop();
-      // console.log(e.target.value);
-
       this.setState({newArrCheckBox:newArrCheckBox});
       this.setState({searchTerm: e.target.value})
     }
@@ -80,11 +77,6 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
 
   renderCheckBox(){
     if(this.state.checkBoxes){
-      // const filterCheckedFurniture = this.state.furnitureStyles.filter(
-      //   (dt) => {
-      //     return dt.indexOf(1) !== -1; 
-      //   }
-      // );
       return(
         <Checkboxes>
           {this.state.furnitureStyles.map((item,i)=> {
@@ -100,9 +92,6 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
     }
   }
   searchUpdated = (e) => {
-    const dateset = e.target.dataset.set || null;
-    console.log(dateset);
-    
     this.setState({searchTerm: e.target.value})
   }
 
@@ -110,7 +99,7 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
 
     const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
     const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
-
+    
     return ( 
       <>
         <Container>
@@ -136,7 +125,7 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                 </div>
 
                 <div className="Delivery">
-                  <select data-set="day" onChange={(e)=>this.searchUpdated(e)}>
+                  <select multiple data-set="day" onChange={(e)=>this.searchUpdated(e)}>
                     <option value="">Delivery Time</option>
                     { this.state.delivery_time.map((item, i) => {
                       return(
