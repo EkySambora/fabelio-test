@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { Helmet } from 'react-helmet';
 import Card from 'components/card';
 import { 
   Container, 
@@ -104,6 +105,9 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
     
     return ( 
       <>
+        <Helmet>
+          <title>Fabelio Test</title>
+        </Helmet>
         <Container>
           <Box>
             <Header>
