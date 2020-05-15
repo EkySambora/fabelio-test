@@ -1,4 +1,4 @@
-export const dataJson = {   
+{   
     "furniture_styles" : [
         "Classic",
         "Midcentury",
