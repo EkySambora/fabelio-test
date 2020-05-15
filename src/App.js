@@ -6,6 +6,10 @@ import {
   Container, 
   Box, 
   Header, 
+  Search,
+  Filter,
+  SelectBox,
+  Delivery,
   Products, 
   Loading,
   Checkboxes
@@ -111,13 +115,12 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
         <Container>
           <Box>
             <Header>
-              <div className="search">
+              <Search>
                 <input type="text" placeholder="Search Furniture" data-set="seacrh" onChange={this.searchUpdated} />
-              </div>
+              </Search>
 
-              <div className="filter">
-
-                <div className="selectBox">
+              <Filter>
+                <SelectBox>
                   <input 
                     onClick={this.showCheckBoxes}
                     readOnly 
@@ -127,9 +130,9 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                     value={this.state.newArrCheckBox.length ? this.state.newArrCheckBox : ''} 
                     />
                   { this.showCheckBoxes ? this.renderCheckBox() : ''}
-                </div>
+                </SelectBox>
 
-                <div className="Delivery">
+                <Delivery>
                   <select data-set="day" onChange={(e)=>this.searchUpdated(e)}>
                     <option value="">Delivery Time</option>
                     { this.state.delivery_time.map((item, i) => {
@@ -139,9 +142,8 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                     })}
                   </select>
                   <i class="arrow down"></i>
-                </div>
-
-              </div>
+                </Delivery>
+              </Filter>
             </Header>     
             { this.state.products.length === 0 ? (
               <Loading><h5>Loading ...</h5></Loading>) : (

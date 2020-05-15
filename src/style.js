@@ -42,73 +42,102 @@ export const Header = styled.header`
             font-weight:bold;
         }
     }
+`;  
 
-    .filter{
-        display:flex;
-        width: 100%;
-        justify-content: space-between; 
-        .selectBox{
-            width: 49%;
-            /* margin-right:20px; */
-            border-bottom: 1px solid #fff;
-            padding-bottom:5px;
-            input{
-                width:-webkit-fill-available;
-                width:-moz-fill-available;
-                border:none;
-                padding:10px;
-                outline:none;
-                cursor: pointer;
-                ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                    opacity: 1; /* Firefox */
-                    font-size:15px;
-                    color:grey;
-                }
-            }
+export const Search = styled.div`
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+    input{
+        ::placeholder {
+            opacity: 1; 
+            color:#fff;
+            font-size:20px;
+            font-weight:bold;
         }
+        letter-spacing: -1px;
+        width:48.5%;
+        border:none;
+        background-color: #106cc8;
+        outline:none;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom:1px solid #fff;
+        color:#fff;
+        font-size:20px;
+        font-weight:bold;
+    }
+`;
 
-        .Delivery{
-            width:49%;
-            border-bottom: 1px solid #fff;
-            padding-bottom:5px;
-            position: relative;
-            .arrow {
-                width: 0; 
-                height: 0; 
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #123;
-                position: absolute;
-                    top:11px;
-                    right:9px;
-            }
-            select{
-                width:-webkit-fill-available;
-                width:-moz-fill-available;
-                width: 100%; 
-                height: 100%; 
-                /* height:33px; */
-                padding: 5px;
-                color: grey;
-                border:none;
-                outline:none;
-                cursor: pointer;
-                background-color:#fff;
-                border-radius:0;
-                appearance: none;
-                option { 
-                    color: black; 
-                    padding:10px;
-                    height:300px;
-                }
-                option:first-child{
-                    color: grey;
+export const Filter = styled.div`
+    display:flex;
+    width: 100%;
+    justify-content: space-between; 
+    .Delivery{
+        
+    }
+`;
 
-                }
-            }
+export const SelectBox = styled.div`
+    width: 49%;
+    /* margin-right:20px; */
+    border-bottom: 1px solid #fff;
+    padding-bottom:5px;
+    input{
+        width:-webkit-fill-available;
+        width:-moz-fill-available;
+        border:none;
+        padding:10px;
+        outline:none;
+        cursor: pointer;
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            opacity: 1; /* Firefox */
+            font-size:15px;
+            color:grey;
         }
     }
-`;  
+`;
+
+export const Delivery = styled.div`
+    width:49%;
+    border-bottom: 1px solid #fff;
+    padding-bottom:5px;
+    position: relative;
+    .arrow {
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #123;
+        position: absolute;
+            top:11px;
+            right:9px;
+    }
+    select{
+        width:-webkit-fill-available;
+        width:-moz-fill-available;
+        width: 100%; 
+        height: 100%; 
+        /* height:33px; */
+        padding: 5px;
+        color: grey;
+        border:none;
+        outline:none;
+        cursor: pointer;
+        background-color:#fff;
+        border-radius:0;
+        appearance: none;
+        option { 
+            color: black; 
+            padding:10px;
+            height:300px;
+        }
+        option:first-child{
+            color: grey;
+
+        }
+    }
+`;
 
 export const Products = styled.div`
     display:flex;
