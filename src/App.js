@@ -10,7 +10,7 @@ import {
   Checkboxes
 } from './style';
 
-import SearchInput, {createFilter} from 'react-search-input';
+import {createFilter} from 'react-search-input';
 //https://github.com/enkidevs/react-search-input
 
 const baseUrl = "http://www.mocky.io/v2/5c9105cb330000112b649af8";
