@@ -35,34 +35,34 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
    }
 
   async componentDidMount(){
-    const res = await Axios.get(baseUrl)
-    const dt = await res.data
-    const furnitureStyles = dt.furniture_styles
-    this.setState({products: dt.products})
+    const res = await Axios.get(baseUrl);
+    const dt = await res.data;
+    const furnitureStyles = dt.furniture_styles;
+    this.setState({products: dt.products});
 
     let sortArr = Array.from(furnitureStyles).sort();
-    this.setState({furnitureStyles: sortArr})
+    this.setState({furnitureStyles: sortArr});
 
-    this.mapDataDeliveryTime()
+    this.mapDataDeliveryTime();
   }
 
   mapDataDeliveryTime = () => {
     let arr = []
     this.state.products.map((item) => {
       // let changeNum = parseInt(item.delivery_time) 
-      arr.push(item.delivery_time)
-      arr.sort((a, b) => a - b)
+      arr.push(item.delivery_time);
+      arr.sort((a, b) => a - b);
       
-      return arr
+      return arr;
     })
     // remove same value array
     let backToArray = Array.from(new Set(arr));
 
-    return this.setState({delivery_time: backToArray})
+    return this.setState({delivery_time: backToArray});
   }
 
   showCheckBoxes = () => {
-    this.setState({checkBoxes: !this.state.checkBoxes})
+    this.setState({checkBoxes: !this.state.checkBoxes});
   }
   getValueCheck = (item, e)=>{
     let newArrCheckBox = this.state.newArrCheckBox;
@@ -72,11 +72,11 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
     if(e.target.checked ){
       newArrCheckBox.push(addValue);
       this.setState({newArrCheckBox:newArrCheckBox});
-      this.setState({searchTerm: e.target.value})
+      this.setState({searchTerm: e.target.value});
     } else {
       newArrCheckBox.pop();
       this.setState({newArrCheckBox:newArrCheckBox});
-      this.setState({searchTerm: e.target.value})
+      this.setState({searchTerm: e.target.value});
     }
   }
 
@@ -96,16 +96,17 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
       )
     }
   }
+  
   searchUpdated = (e) => {
     this.setState({searchTerm: e.target.value})
   }
-
+  
   render() { 
-    const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
+    // const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
 
-    // const KEYS_TO_FILTERS = [ 'delivery_time'];
+    const KEYS_TO_FILTERS = [ 'delivery_time'];
 
-    const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
+    const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
     
     return ( 
       <>
@@ -141,7 +142,7 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                       )
                     })}
                   </select>
-                  <i class="arrow down"></i>
+                  <i className="arrow down"></i>
                 </Delivery>
               </Filter>
             </Header>     
