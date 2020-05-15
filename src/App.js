@@ -102,9 +102,9 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
   }
   
   render() { 
-    // const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
+    const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
 
-    const KEYS_TO_FILTERS = [ 'delivery_time'];
+    // const KEYS_TO_FILTERS = [ 'delivery_time'];
 
     const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
     
