@@ -125,7 +125,7 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                 </div>
 
                 <div className="Delivery">
-                  <select multiple data-set="day" onChange={(e)=>this.searchUpdated(e)}>
+                  <select data-set="day" onChange={(e)=>this.searchUpdated(e)}>
                     <option value="">Delivery Time</option>
                     { this.state.delivery_time.map((item, i) => {
                       return(
