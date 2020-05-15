@@ -8,30 +8,15 @@
       "components/*": [ 
         "./components/*"
       ],
-      "containers": [
-        "./containers"
-      ],
       "configs": [
         "./configs"
-      ],
-      "libraries": [
-        "./libraries"
-      ],
-      "modules": [
-        "./modules"
       ],
       "utils": [
         "./utils"
       ],
-      "pages": [
-        "./pages"
-      ],
       "assets": [
         "./assets"
       ],
-      "services": [
-        "./services"
-      ]
     }
   }
 }

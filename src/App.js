@@ -23,23 +23,23 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
  class App extends Component {
    constructor(props) {
     super(props);
-      this.state = { 
-        products: [],
-        delivery_time:[],
-        checkBoxes: false,
-        furnitureStyles: [],
-        newArrCheckBox:[],
-        searchTerm: '',
-        type: ''
-      }
+    this.state = { 
+      products: [],
+      delivery_time:[],
+      checkBoxes: false,
+      furnitureStyles: [],
+      newArrCheckBox:[],
+      searchTerm: '',
+      type: ''
+    }
    }
 
   async componentDidMount(){
     const res = await Axios.get(baseUrl);
     const dt = await res.data;
-    const furnitureStyles = dt.furniture_styles;
     this.setState({products: dt.products});
-
+    
+    const furnitureStyles = dt.furniture_styles;
     let sortArr = Array.from(furnitureStyles).sort();
     this.setState({furnitureStyles: sortArr});
 
@@ -103,9 +103,8 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
   
   render() { 
     const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
-
     // const KEYS_TO_FILTERS = [ 'delivery_time'];
-
+    
     const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
     
     return ( 
@@ -138,7 +137,7 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                     <option value="">Delivery Time</option>
                     { this.state.delivery_time.map((item, i) => {
                       return(
-                        <option key={i} value={item}>{item}</option>
+                        <option key={i} value={item}>{item} Days</option>
                       )
                     })}
                   </select>
