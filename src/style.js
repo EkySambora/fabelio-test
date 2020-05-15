@@ -1,28 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* height: 100vh; */
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   background: #fff;
   margin-top: 20px;
-  /* ::before{
-    content:" ";
-    width: 0;
-    height: 0;
-    border:1px solid grey;
-    border-top: 50px solid transparent;
-    border-left: 100px solid red;
-    border-bottom: 50px solid transparent;
-    box-shadow: 1px 4px 9px -7px rgba(0,0,0,0.75);
-  } */
 `;
 
 export const Box = styled.div`
   border: 1px solid #111;
   width: 740px;
-  /* height: 740px; */
   background: white;
 `;
 
@@ -84,17 +71,31 @@ export const Header = styled.header`
             width:49%;
             border-bottom: 1px solid #fff;
             padding-bottom:5px;
+            position: relative;
+            .arrow {
+                width: 0; 
+                height: 0; 
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #123;
+                position: absolute;
+                    top:11px;
+                    right:9px;
+            }
             select{
                 width:-webkit-fill-available;
                 width:-moz-fill-available;
-                height:33px;
+                width: 100%; 
+                height: 100%; 
+                /* height:33px; */
                 padding: 5px;
                 color: grey;
                 border:none;
                 outline:none;
                 cursor: pointer;
                 background-color:#fff;
-                border-radius:none;
+                border-radius:0;
+                appearance: none;
                 option { 
                     color: black; 
                     padding:10px;

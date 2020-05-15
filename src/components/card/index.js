@@ -11,14 +11,14 @@ const Card = (props) => {
                 <p>Rp. {formatPrice(price)}</p>
             </div>
             <div className="description">
-                <p className="desc">{description.substring(0, 60)}...</p>
+                <p className="desc">{description.substring(0, 114)}...</p>
 
                 <div className="styles">
-                {furniture_style.map((frs,i)=> <p key={i}>{frs}, </p>)}
+                    {furniture_style.map((frs,i)=> <p key={i}>{frs}, </p>)}
                 </div>
 
                 <div className="deliver">
-                <p>{delivery_time} Days</p>
+                    <p>{delivery_time} Days</p>
                 </div>
 
             </div>

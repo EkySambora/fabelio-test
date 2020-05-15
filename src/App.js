@@ -44,8 +44,8 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
   mapDataDeliveryTime = () => {
     let arr = []
     this.state.products.map((item) => {
-      let changeNum = parseInt(item.delivery_time) 
-      arr.push(changeNum)
+      // let changeNum = parseInt(item.delivery_time) 
+      arr.push(item.delivery_time)
       arr.sort((a, b) => a - b)
       
       return arr
@@ -96,8 +96,10 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
   }
 
   render() { 
-
     const KEYS_TO_FILTERS = ['name', 'description', 'price', 'delivery_time', 'furniture_style'];
+
+    // const KEYS_TO_FILTERS = [ 'delivery_time'];
+
     const filteredProducts = this.state.products.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
     
     return ( 
@@ -105,14 +107,13 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
         <Container>
           <Box>
             <Header>
-
               <div className="search">
                 <input type="text" placeholder="Search Furniture" data-set="seacrh" onChange={this.searchUpdated} />
               </div>
 
               <div className="filter">
 
-                <div className="selectBox"  >
+                <div className="selectBox">
                   <input 
                     onClick={this.showCheckBoxes}
                     readOnly 
@@ -129,10 +130,11 @@ const baseUrl = "https://www.mocky.io/v2/5c9105cb330000112b649af8";
                     <option value="">Delivery Time</option>
                     { this.state.delivery_time.map((item, i) => {
                       return(
-                        <option key={i} value={item}>{item} Days</option>
+                        <option key={i} value={item}>{item}</option>
                       )
                     })}
                   </select>
+                  <i class="arrow down"></i>
                 </div>
 
               </div>
